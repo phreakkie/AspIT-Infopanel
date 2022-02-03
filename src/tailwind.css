@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.aspit-green {
+  background: linear-gradient(to right, #194541c9 0%, #194541 100%);
+}

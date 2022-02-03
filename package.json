@@ -1,0 +1,23 @@
+{
+  "name": "aspit-inforsk-rm",
+  "version": "1.0.0",
+  "description": "Infoskærm til AspIT Nordjylland",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/tailwind.css -o ./public/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phreakkie/AspIT-Inforsk-rm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phreakkie/AspIT-Inforsk-rm/issues"
+  },
+  "homepage": "https://github.com/phreakkie/AspIT-Inforsk-rm#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.18"
+  }
+}
