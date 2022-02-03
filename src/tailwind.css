@@ -5,3 +5,7 @@
 .aspit-green {
   background: linear-gradient(to right, #194541c9 0%, #194541 100%);
 }
+
+.aspit-red {
+  color: #bf3029;
+}
