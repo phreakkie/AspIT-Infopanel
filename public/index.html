@@ -7,7 +7,7 @@
     <title>Infoskærm</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="font-OpenSans">
     <div class="grid grid-cols-9 aspit-green">
       <section class="col-span-3 h-screen border-r-4">
         <div class="pt-8">
@@ -90,7 +90,63 @@
               mennesker
             </p>
           </div>
-          <div class="col-span-2"></div>
+          <div class="col-span-2 grid grid-cols-3 gap-1">
+            <div
+              class="col-span-3 flex items-center justify-evenly h-3/6 mt-16"
+            >
+              <img
+                class="w-2/5 bg-aspit-weather rounded-full"
+                id="dailyIcon"
+                src="http://openweathermap.org/img/wn/10d@4x.png"
+                alt=""
+              />
+              <p class="text-white text-6xl">
+                <span id="dailyTemp">5</span> °C
+              </p>
+            </div>
+            <div
+              class="col-span-1 flex flex-col justify-items-center items-center border-r-2 mb-8"
+            >
+              <p class="text-white text-2xl text-center" id="firstDate">man</p>
+              <img
+                class="h-20 aspect-auto object-fit bg-aspit-weather rounded-full"
+                id="firstIcon"
+                src="http://openweathermap.org/img/wn/10d@4x.png"
+                alt=""
+              />
+              <p class="text-white text-2xl text-center">
+                <span id="firstTemp">5</span> °C
+              </p>
+            </div>
+            <div
+              class="col-span-1 flex flex-col justify-items-center items-center border-r-2 mb-8"
+            >
+              <p class="text-white text-2xl text-center" id="secondDate">tir</p>
+              <img
+                class="h-20 aspect-auto object-fit bg-aspit-weather rounded-full"
+                id="secondIcon"
+                src="http://openweathermap.org/img/wn/10d@4x.png"
+                alt=""
+              />
+              <p class="text-white text-2xl text-center">
+                <span id="secondTemp">5</span> °C
+              </p>
+            </div>
+            <div
+              class="col-span-1 flex flex-col justify-items-center items-center"
+            >
+              <p class="text-white text-2xl text-center" id="thirdDate">ons</p>
+              <img
+                class="h-20 aspect-auto object-fit bg-aspit-weather rounded-full"
+                id="thirdIcon"
+                src="http://openweathermap.org/img/wn/10d@4x.png"
+                alt=""
+              />
+              <p class="text-white text-2xl text-center">
+                <span id="thirdTemp">5</span> °C
+              </p>
+            </div>
+          </div>
         </section>
       </section>
     </div>

@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./public/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        OpenSans: ['Open Sans']
+      }
+    },
   },
   plugins: [],
 }
