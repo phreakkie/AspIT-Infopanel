@@ -1,5 +1,6 @@
 <?php
-
+$title = "Lav nyhed";
+$al = 2;
 require "./includes/_adminHeader.php";
 require "./includes/_crud.php";
 
@@ -47,6 +48,8 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
     </div>
 
 <?php
+} else {
+    header("location: admin.php");
 }
 
 

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/phreakkie/AspIT-Inforsk-rm#readme",
   "devDependencies": {
     "tailwindcss": "^3.0.18"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.5.2"
   }
 }

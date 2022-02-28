@@ -8,8 +8,11 @@ session_start();
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Infoskærm</title>
+  <title><?= $title ?> | Infoskærm</title>
+  <link rel="stylesheet" href="glide.core.min.css">
+  <link rel="stylesheet" href="glide.theme.min.css">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
 </head>
 
 <body class="font-OpenSans aspit-green">

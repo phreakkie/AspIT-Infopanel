@@ -1,21 +1,12 @@
 <?php
-require "./includes/_header.php";
+$al = 3;
+require "./includes/_adminHeader.php";
 
 if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 ?>
 
-    <section>
-        <?php echo "<p class='text-white text-2xl'>Velkommen <span class='aspit-red'>" . $_SESSION['firstname'] . "</span></p>"; ?>
-
-        <?php
-        if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
-        ?>
-            <button class="text-white border border-black rounded-lg p-2 bg-gray-800"><a href="createNews.php">Opret ny praktiknyhed</a></button>
-        <?php
-        }
-        ?>
-
-        <div class=""><a class=" hover:underline text-white text-lg" href="logout.php">Log ud</a></div>
+    <section class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <?php echo "<p class='text-white text-8xl'>Velkommen <span class='aspit-red'>" . $_SESSION['firstname'] . "</span></p>"; ?>
     </section>
 
 <?php

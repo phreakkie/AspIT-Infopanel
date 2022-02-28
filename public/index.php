@@ -1,18 +1,20 @@
 <!-- Includes head-tags and body-open-tag -->
-<?php require "./includes/_header.php" ?>
+
+<?php
+$title = "Infoskærm";
+require "./includes/_header.php" ?>
 
 
 <div class="grid grid-cols-9 ">
-  <section class="col-span-3 h-screen border-r-4">
+  <section class="col-span-3 h-screen border-r-4 border-white">
     <div class="pt-8">
       <h2 class="text-center text-white text-5xl">Madplan uge 5</h2>
-      <div class="w-9/12 mx-auto h-3/6 border-l-2 pl-10">
+      <div class="w-9/12 mx-auto min-h-[500px] border-l-2 pl-10 border-white">
         <!-- Lunchplan -->
         <div class="mandag text-white grid grid-cols-4 mt-14 text-2xl">
           <p class="col-span-1">Mandag:</p>
           <p class="col-span-3">
-            Gule ærter med gule ærter og spæk og klister
-          </p>
+            Lorem ipsum dolor sit amet
         </div>
         <div class="mandag text-white grid grid-cols-4 pt-10 text-2xl">
           <p class="col-span-1">Tirsdag:</p>
@@ -62,14 +64,20 @@
         <p id="date" class="text-3xl text-gray-300">1. januar 2022</p>
       </div>
     </header>
-    <main class="grid grid-cols-5 border-b-4 pb-4">
-      <!-- Including _internNews -->
-      <?php
-      include "./includes/_internNews.php";
-      ?>
-    </main>
+    <section class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides border-b-4 border-white">
+
+          <!-- Including _internNews -->
+          <?php
+          include "./includes/_internNews.php";
+          ?>
+
+        </div>
+      </div>
+    </section>
     <!-- News Feed -->
-    <section class="grid grid-cols-5 flex-grow">
+    <section class=" grid grid-cols-5 flex-grow">
       <div class="col-span-3 border-r-4 text-white">
         <div class="mt-8">
           <img class="mx-auto h-[200px]" src="https://unsplash.it/300/200" alt="" />
@@ -88,14 +96,14 @@
             <span id="dailyTemp">5</span> °C
           </p>
         </div>
-        <div class="col-span-1 flex flex-col justify-items-center items-center border-r-2 mb-8">
+        <div class="col-span-1 flex flex-col justify-items-center items-center border-r-2 border-white mb-8">
           <p class="text-white text-2xl text-center" id="firstDate">man</p>
           <img class="h-20 aspect-auto object-fit bg-aspit-weather rounded-full" id="firstIcon" src="http://openweathermap.org/img/wn/10d@4x.png" alt="" />
           <p class="text-white text-2xl text-center">
             <span id="firstTemp">5</span> °C
           </p>
         </div>
-        <div class="col-span-1 flex flex-col justify-items-center items-center border-r-2 mb-8">
+        <div class="col-span-1 flex flex-col justify-items-center items-center border-r-2 border-white mb-8">
           <p class="text-white text-2xl text-center" id="secondDate">tir</p>
           <img class="h-20 aspect-auto object-fit bg-aspit-weather rounded-full" id="secondIcon" src="http://openweathermap.org/img/wn/10d@4x.png" alt="" />
           <p class="text-white text-2xl text-center">

@@ -7,7 +7,6 @@ function insertinews($descWhere, $descWhat, $src, $alt)
     $sql = "INSERT INTO inews(descWhere, descWhat, src, alt) VALUES(?,?,?,?)";
     $stmt = $connection->prepare($sql);
     $stmt->execute([$descWhere, $descWhat, $src, $alt]);
-    header("location: createNews.php?db=succes");
 }
 
 function selectinews()
