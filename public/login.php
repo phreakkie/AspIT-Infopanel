@@ -7,7 +7,6 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     login($username, $password);
 }
-
 ?>
 
 

@@ -26,10 +26,10 @@ if (!isset($_SESSION['username'])) {
                 <div id='dropdownNavbar' class='hidden z-10 text-base list-none bg-gray-800 rounded divide-y divide-gray-100 shadow '>
                 <ul class='' aria-labelledby='dropdownLargeButton'>
                   <li>
-                    <a href='createUser.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret bruger</a>
+                    <a href='createUsers.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret bruger</a>
                   </li>
                   <li>
-                    <a href='deleteUser.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet bruger</a>
+                    <a href='deleteUsers.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet bruger</a>
                   </li>
                   
                 </ul>

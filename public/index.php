@@ -64,9 +64,10 @@ require "./includes/_header.php" ?>
         <p id="date" class="text-3xl text-gray-300">1. januar 2022</p>
       </div>
     </header>
-    <section class="glide">
+
+    <section class="glide flex-grow border-white border-b-4">
       <div class="glide__track" data-glide-el="track">
-        <div class="glide__slides border-b-4 border-white">
+        <div class="glide__slides ">
 
           <!-- Including _internNews -->
           <?php
@@ -76,8 +77,9 @@ require "./includes/_header.php" ?>
         </div>
       </div>
     </section>
+
     <!-- News Feed -->
-    <section class=" grid grid-cols-5 flex-grow">
+    <section class=" grid grid-cols-5 ">
       <div class="col-span-3 border-r-4 text-white">
         <div class="mt-8">
           <img class="mx-auto h-[200px]" src="https://unsplash.it/300/200" alt="" />

@@ -11,7 +11,8 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
         $descWhat = $_POST['descWhat'];
         $src = $_POST['src'];
         $alt = $_POST['alt'];
-        insertinews($descWhere, $descWhat, $src, $alt);
+        $userid = $_SESSION['userid'];
+        insertinews($descWhere, $descWhat, $src, $alt, $userid);
     }
 
     if (isset($_GET['db'])) {
