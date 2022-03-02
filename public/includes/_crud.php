@@ -8,6 +8,13 @@ function insertinews($descWhere, $descWhat, $src, $alt, $userid)
     $stmt = $connection->prepare($sql);
     $stmt->execute([$descWhere, $descWhat, $src, $alt, $userid]);
 }
+function updateNews($descWhere, $descWhat, $src, $alt, $id)
+{
+    global $connection;
+    $sql = "UPDATE inews SET descWhere=?, descWhat=?, src=?, alt=? WHERE id=?" ;
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([$descWhere, $descWhat, $src, $alt, $id]);
+}
 
 function active()
 {
@@ -47,12 +54,7 @@ function createUser($username, $hash1, $firstName, $lastName, $accessLevel)
     global $connection;
     $sql = "INSERT INTO users (dbUsername, dbPassword, firstName, lastName, accessLevel) VALUES(?,?,?,?,?)";
     $stmt =  $connection->prepare($sql);
-    $stmt->bindParam(1, $username);
-    $stmt->bindParam(2, $hash1);
-    $stmt->bindParam(3, $firstName);
-    $stmt->bindParam(4, $lastName);
-    $stmt->bindParam(5, $accessLevel);
-    $stmt->execute();
+    $stmt->execute([$username, $hash1, $firstName, $lastName, $accessLevel]);
 }
 
 function getUser($username)
@@ -61,6 +63,16 @@ function getUser($username)
     $sql = "SELECT * FROM users WHERE dbUsername = ?";
     $stmt =  $connection->prepare($sql);
     $stmt->bindParam(1, $username);
+    $stmt->execute();
+    return $stmt;
+}
+
+function getSingleNews($id)
+{
+    global $connection;
+    $sql = "SELECT * FROM inews WHERE id = ?";
+    $stmt =  $connection->prepare($sql);
+    $stmt->bindParam(1, $id);
     $stmt->execute();
     return $stmt;
 }
@@ -80,9 +92,17 @@ function getAllFromTable($table)
 
 function delete($id, $table)
 {
+    switch ($table) {
+        case "users":
+            $tableID = "userid";
+            break;
+        case "inews":
+            $tableID = "id";
+            break;
+    }
     global $connection;
     try {
-        $sql = "DELETE FROM $table WHERE userid = ?";
+        $sql = "DELETE FROM $table WHERE $tableID = ?";
         $stmt = $connection->prepare($sql);
         $stmt->execute([$id]);
     } catch (PDOException $e) {

@@ -48,11 +48,9 @@ if (!isset($_SESSION['username'])) {
                     <a href='createNews.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret nyhed</a>
                   </li>
                   <li>
-                    <a href='updateNews.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater nyhed</a>
+                    <a href='updateNews.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater/slet nyhed</a>
                   </li>
-                  <li>
-                    <a href='deleteNews.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet nyhed</a>
-                  </li>                  
+                                  
                 </ul>                
             </div> 
                 </li>";
