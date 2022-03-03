@@ -97,3 +97,4 @@ if (!isset($_SESSION['username'])) {
         <?php } ?>
     </ul>
 </nav>
+<?php

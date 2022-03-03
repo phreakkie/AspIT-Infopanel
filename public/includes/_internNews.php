@@ -25,4 +25,3 @@ while ($row = $stmt->fetch()) {
     </div>
 <?php
 }
-?>

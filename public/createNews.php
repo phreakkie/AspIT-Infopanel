@@ -15,10 +15,6 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
         insertinews($descWhere, $descWhat, $src, $alt, $userid);
     }
 
-    if (isset($_GET['db'])) {
-        echo "<p>Praktiknyhed oprettet i databasen!</p>";
-    }
-
 ?>
     <div class=" text-white">
         <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="mx-auto my-20">

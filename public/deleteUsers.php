@@ -4,9 +4,11 @@ $al = 1;
 require "./includes/_adminHeader.php";
 require "./includes/_crud.php";
 // $_GET['id'] != $_SESSION['userid'] tjekker at man ikke kan slette det ID man er logget ind med, altså ikke kan slette sig selv
-if (isset($_GET['id']) && $_GET['id'] != $_SESSION['userid']) {
-    $id = $_GET['id'];
-    delete($id, "users");
+if($_SESSION['accesslevel'] == 1){
+    if (isset($_GET['id']) && $_GET['id'] != $_SESSION['userid']) {
+        $id = $_GET['id'];
+        delete($id, "users");
+    }
 }
 ?>
 <div class=" text-white">

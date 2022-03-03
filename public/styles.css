@@ -687,6 +687,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 33.333333%;
 }
 
+.w-2\/3{
+  width: 66.666667%;
+}
+
 .w-full{
   width: 100%;
 }
@@ -701,10 +705,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-1{
   width: 0.25rem;
-}
-
-.w-2\/3{
-  width: 66.666667%;
 }
 
 .flex-grow{
@@ -864,10 +864,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 2px;
 }
 
-.border-b-\[3px\]{
-  border-bottom-width: 3px;
-}
-
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -917,12 +913,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 2rem;
 }
 
-.p-2{
-  padding: 0.5rem;
-}
-
 .p-3{
   padding: 0.75rem;
+}
+
+.p-2{
+  padding: 0.5rem;
 }
 
 .px-2{

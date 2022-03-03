@@ -14,6 +14,7 @@ function updateNews($descWhere, $descWhat, $src, $alt, $id)
     $sql = "UPDATE inews SET descWhere=?, descWhat=?, src=?, alt=? WHERE id=?" ;
     $stmt = $connection->prepare($sql);
     $stmt->execute([$descWhere, $descWhat, $src, $alt, $id]);
+    
 }
 
 function active()
@@ -79,8 +80,16 @@ function getSingleNews($id)
 
 function getAllFromTable($table)
 {
+    switch ($table) {
+        case "users":
+            $tableID = "userid";
+            break;
+        case "inews":
+            $tableID = "id";
+            break;
+    }
     global $connection;
-    $sql = "SELECT * FROM $table";
+    $sql = "SELECT * FROM $table ORDER BY $tableID DESC" ;
     $stmt =  $connection->prepare($sql);
     $stmt->execute();
     return $stmt;
