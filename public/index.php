@@ -1,7 +1,7 @@
 <!-- Includes head-tags and body-open-tag -->
 
 <?php
-$title = "Infoskærm";
+$title = "Infopanel";
 require "./includes/_header.php" ?>
 
 
