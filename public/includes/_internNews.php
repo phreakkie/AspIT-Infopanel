@@ -1,6 +1,7 @@
 <?php
 //Connect til DB
 include "./includes/_connect.php";
+include "./includes/_crud.php";
 
 //Hent data fra "inews"-tabellen
 $stmt = active();
@@ -20,7 +21,7 @@ while ($row = $stmt->fetch()) {
                                 ?></p>
         </div>
         <div class="col-span-2 justify-self-end h-[380px]">
-            <img class=" h-full w-auto" src="<?php echo $row['src']; ?>" alt="<?php echo $row['alt']; ?>" />
+            <img class=" h-full w-auto" src="./uploads/<?php echo $row['src']; ?>" alt="<?php echo $row['alt']; ?>" />
         </div>
     </div>
 <?php

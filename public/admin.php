@@ -1,5 +1,7 @@
 <?php
 $al = 3;
+$title = "Admin";
+$meta ="Admin siden til AspIT inforpanel";
 require "./includes/_adminHeader.php";
 
 if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
