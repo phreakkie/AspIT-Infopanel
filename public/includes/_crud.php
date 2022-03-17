@@ -8,12 +8,13 @@ function insertinews($descWhere, $descWhat, $src, $alt, $userid)
     $stmt = $connection->prepare($sql);
     $stmt->execute([$descWhere, $descWhat, $src, $alt, $userid]);
 }
-function updateNews($descWhere, $descWhat, $src, $alt, $id)
+
+function updateNews($descWhere, $descWhat, $src, $alt, $active, $id)
 {
     global $connection;
-    $sql = "UPDATE inews SET descWhere=?, descWhat=?, src=?, alt=? WHERE id=?" ;
+    $sql = "UPDATE inews SET descWhere=?, descWhat=?, src=?, alt=?, active=? WHERE id=?" ;
     $stmt = $connection->prepare($sql);
-    $stmt->execute([$descWhere, $descWhat, $src, $alt, $id]);
+    $stmt->execute([$descWhere, $descWhat, $src, $alt, $active,$id]);
     
 }
 

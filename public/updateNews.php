@@ -8,13 +8,22 @@ if (isset($_GET['deleteID'])) {
     header('Location: updateNews.php');
 }
 if (isset($_POST['submit'])) {
-    $descWhere = $_POST['descWhere'];
-    $descWhat = $_POST['descWhat'];
-    $src = $_POST['src'];
-    $alt = $_POST['alt'];
-    $id = $_GET['updateID'];
-    updateNews($descWhere, $descWhat, $src, $alt, $id);
-    header("location: updateNews.php");
+        include "./includes/_upload.php";
+        $descWhere = $_POST['descWhere'];
+        $descWhat = $_POST['descWhat'];
+        $src = $file_name;
+        $alt = $_POST['alt'];
+        $id = $_GET['updateID'];
+        if (isset($_POST['active'])){
+            $active = 1;
+        }else if(empty($_POST['active'])){
+            $active = 0;
+        }
+        if($uploadOk == 1 || $uploadOk == 2){
+        updateNews($descWhere, $descWhat, $src, $alt, $active, $id);
+        }
+        header("location: updateNews.php");
+
 }
 require "./includes/_adminHeader.php";
 
@@ -24,28 +33,34 @@ if (isset($_GET['updateID'])) {
     if ($row = $stmt->fetch()) {
 ?>
         <div class=" text-white">
-            <form action="<?php htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" class="mx-auto my-20">
+            <form action="<?php htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" class="w-2/3 mx-auto my-20 flex flex-col justify-center">
 
                 <div class="grid grid-cols-2 mb-10 mx-6">
-                    <label for="descWhere" class="text-3xl ">Beskrivelse af elevens praktikplads:</label>
-                    <textarea name="descWhere" rows="5" cols="50" class="text-gray-700 rounded border-black border px-2 py-2 mb-4" placeholder="Kort beskrivelse af stedet eleven er i praktik" required><?php echo $row['descWhere']; ?></textarea>
+                    <label for="descWhere" class="text-3xl w-max mr-12">Beskrivelse af elevens praktikplads:</label>
+                    <textarea name="descWhere" id="descWhere" rows="5" cols="50" class="text-gray-700 rounded border-black border px-2 py-2 mb-4" placeholder="Kort beskrivelse af stedet eleven er i praktik" required><?php echo $row['descWhere']; ?></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 mb-10 mx-6">
-                    <label for="descWhat" class="text-3xl  ">Beskrivelse af elevens praktikopgaver:</label>
-                    <textarea name="descWhat" rows="5" cols="50" class="text-gray-700 rounded border-black border px-2 py-2" placeholder="Kort beskrivelse af elevens opgaver på praktikstedet" required><?php echo $row['descWhat']; ?></textarea>
+                    <label for="descWhat" class="text-3xl w-max mr-12 ">Beskrivelse af elevens praktikopgaver:</label>
+                    <textarea name="descWhat" id="descWhat" rows="5" cols="50" class="text-gray-700 rounded border-black border px-2 py-2" placeholder="Kort beskrivelse af elevens opgaver på praktikstedet" required><?php echo $row['descWhat']; ?></textarea>
                 </div>
 
                 <div class="grid grid-cols-2 mb-10 mx-6">
-                    <label for="src" class="text-3xl  ">Billede:</label>
-                    <input type="text" name="src" value="<?php echo $row['src']; ?>" class="border text-gray-700" placeholder="Indsæt billede URL">
+                    <label for="src" class="text-3xl  w-max mr-12">Billede:</label>
+                    <input type="file" name="src" id="src" data-value="<?php echo $row['src']; ?>" class="border border-white bg-white text-gray-700" >
                 </div>
 
                 <div class="grid grid-cols-2 mb-10 mx-6">
-                    <label for="alt" class="text-3xl  ">Alt tekst til billede:</label>
-                    <input type="text" name="alt" value="<?php echo $row['alt']; ?>" class="border text-gray-700" placeholder="Indsæt alternativ tekst til billedet">
+                    <label for="alt" class="text-3xl w-max mr-12 ">Alt tekst til billede:</label>
+                    <input type="text" name="alt" id="alt" value="<?php echo $row['alt']; ?>" class="border text-gray-700" placeholder="Indsæt alternativ tekst til billedet">
                 </div>
-                <button name="submit" class="py-4 px-8 ml-6 border rounded border-black">Opdater</button>
+                <div class="grid grid-cols-2 mb-10 mx-6 items-center">
+                <label for="active"  class="text-3xl w-max mr-12">Aktiv:</label>
+                <input name="active" id="active" class="rounded scale-150 appearance-none checked:text-gray-800 focus:ring-0 focus:ring-offset-0" type="checkbox"<?php if($row['active'] == 1){
+                    echo "checked";} ?>>
+                </div>
+
+                <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-green-500  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opdater</button>
 
             </form>
 
@@ -53,6 +68,7 @@ if (isset($_GET['updateID'])) {
 <?php
     }
 }
+if(!isset($_GET['updateID'])){
 ?>
 <div class=" text-white">
     <table class="w-2/3 mx-auto">
@@ -63,7 +79,6 @@ if (isset($_GET['updateID'])) {
             <th>Alternativ Beskrivelse</th>
             <th>Opdater</th>
             <th>Slet</th>
-            <th>Aktiv</th>
         </tr>
         <?php $allUsers = getAllFromTable("inews");
         require "./includes/_newsTable.php"
@@ -74,5 +89,5 @@ if (isset($_GET['updateID'])) {
 </div>
 
 <?php
-
+}
 require "./includes/_footer.php";

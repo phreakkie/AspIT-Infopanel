@@ -20,7 +20,7 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
     
     ?>
     <div class=" text-white">
-        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data" class="mx-auto my-20">
+        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data" class="w-2/3 mx-auto my-20 flex flex-col justify-center">
             
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="descWhere" class="text-3xl ">Beskrivelse af elevens praktikplads:</label>
@@ -41,7 +41,7 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
                 <label for="alt" class="text-3xl  ">Alt tekst til billede:</label>
                 <input type="text" name="alt" value="" class="border text-gray-700" placeholder="Indsæt alternativ tekst til billedet">
             </div>
-            <button name="submit" class="py-4 px-8 ml-6 border rounded border-black">Opret</button>
+            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-green-500  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opret</button>
             
         </form>
         

@@ -12,8 +12,8 @@ session_start();
   <title><?= $title ?> | Infoskærm</title>
   <link rel="stylesheet" href="glide.core.min.css">
   <link rel="stylesheet" href="glide.theme.min.css">
-  <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="font-OpenSans aspit-green h-screen">
