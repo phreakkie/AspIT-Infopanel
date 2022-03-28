@@ -1,7 +1,7 @@
 <?php
 //Connect til DB
 include "./includes/_connect.php";
-include "./includes/_crud.php";
+
 
 //Hent data fra "inews"-tabellen
 $stmt = active();

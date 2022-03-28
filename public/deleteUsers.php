@@ -16,13 +16,13 @@ if($_SESSION['accesslevel'] == 1){
     <!-- 2. Generere table row med alt data  med link til deleteUsers.php?id=$row['userid']-->
     <!-- 3. Tjek om $_GET['id'] er isset -->
     <!-- 4. Kør _crud function som sletter ID'et  -->
-    <table class="w-1/2 mx-auto">
+    <table class="w-1/2 mx-auto mt-12">
         <tr>
-            <th>Brugernavn</th>
-            <th>Fornavn</th>
-            <th>Efternavn</th>
-            <th>Accesslevel</th>
-            <th>Slet</th>
+            <th class="text-xl">Brugernavn</th>
+            <th class="text-xl">Fornavn</th>
+            <th class="text-xl">Efternavn</th>
+            <th class="text-xl">Accesslevel</th>
+            <th class="text-xl">Slet</th>
         </tr>
         <?php $allUsers = getAllFromTable("users");
         include "./includes/_userTable.php"

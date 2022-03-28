@@ -27,6 +27,22 @@ function active()
     return $stmt;
 }
 
+function setFoodplan($week, $mon, $tue, $wed, $thu, $fri){
+    global $connection;
+    $sql = "INSERT INTO food(week, mon, tue, wed, thu, fri) VALUES(?,?,?,?,?,?)";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([$week, $mon, $tue, $wed, $thu, $fri]);
+    
+}
+
+function updateFood($week, $mon, $tue, $wed, $thu, $fri, $id)
+{
+    global $connection;
+    $sql = "UPDATE food SET week=?, mon=?, tue=?, wed=?, thu=?, fri=? WHERE id=?" ;
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([$week, $mon, $tue, $wed, $thu, $fri, $id]);
+    
+}
 
 function login($username, $password)
 {
@@ -78,6 +94,15 @@ function getSingleNews($id)
     $stmt->execute();
     return $stmt;
 }
+function getSingleFood($id)
+{
+    global $connection;
+    $sql = "SELECT * FROM food WHERE id = ?";
+    $stmt =  $connection->prepare($sql);
+    $stmt->bindParam(1, $id);
+    $stmt->execute();
+    return $stmt;
+}
 
 function getAllFromTable($table)
 {
@@ -86,6 +111,9 @@ function getAllFromTable($table)
             $tableID = "userid";
             break;
         case "inews":
+            $tableID = "id";
+            break;
+        case "food":
             $tableID = "id";
             break;
     }
@@ -109,6 +137,9 @@ function delete($id, $table)
         case "inews":
             $tableID = "id";
             break;
+        case "food":
+            $tableID = "id";
+            break;
     }
     global $connection;
     try {
@@ -119,3 +150,5 @@ function delete($id, $table)
         echo "Der er sket en fejl i sletningen" . $e->getMessage();
     }
 }
+
+

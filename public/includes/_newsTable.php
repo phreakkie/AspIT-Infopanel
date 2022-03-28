@@ -1,5 +1,4 @@
 <?php
-//Connect til DB
 include "./includes/_connect.php";
 
 $stmt = getAllFromTable("inews");
@@ -18,7 +17,7 @@ while ($row = $stmt->fetch()) {
                     <div class="crosssign_stem_right absolute w-1 h-3 bg-white rotate-45"></div>
                 </span>
             </a></td>
-       
+       <td class="p-3  text-center border-x-2 border-white border-y-4"><?=($row['active'] == 1)? 'Aktiv': 'Inaktiv' ;?></td>
     </tr>
 <?php
 }

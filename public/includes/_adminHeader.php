@@ -83,10 +83,7 @@ if (!isset($_SESSION['username'])) {
                             <a href='createFood.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret madplan</a>
                         </li>
                         <li>
-                            <a href='updateFood.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater madplan</a>
-                        </li>
-                        <li>
-                            <a href='deleteFood.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet madplan</a>
+                            <a href='updateFood.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater/slet madplan</a>
                         </li>
                     </ul>
                 </div>

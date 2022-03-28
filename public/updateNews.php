@@ -7,8 +7,7 @@ if (isset($_GET['deleteID'])) {
     delete($id, "inews");
     header('Location: updateNews.php');
 }
-if (isset($_POST['submit'])) {
-        include "./includes/_upload.php";
+if (isset($_POST['submit'])) {      
         $descWhere = $_POST['descWhere'];
         $descWhat = $_POST['descWhat'];
         $src = $file_name;
@@ -19,8 +18,18 @@ if (isset($_POST['submit'])) {
         }else if(empty($_POST['active'])){
             $active = 0;
         }
-        if($uploadOk == 1 || $uploadOk == 2){
-        updateNews($descWhere, $descWhat, $src, $alt, $active, $id);
+            // HVIS brugeren har valgt at uploade et nyt billede, kør upload.php, sæt src og lav de gode gamle tjek...
+        if(!empty($_FILES['src']['name'])){
+        
+            include "./includes/_upload.php";
+            $src = $file_name;
+            if($uploadOk == 1 || $uploadOk == 2){
+                updateNews($descWhere, $descWhat, $src, $alt, $active, $id);
+            }
+        } else{
+           // Hvis der IKKE er valgt nyt billede - haps da det gamle billede fra det skjulte input - se linje ca 69...
+            $src = $_POST['oldSrc'];      
+            updateNews($descWhere, $descWhat, $src, $alt, $active, $id);       
         }
         header("location: updateNews.php");
 
@@ -48,6 +57,8 @@ if (isset($_GET['updateID'])) {
                 <div class="grid grid-cols-2 mb-10 mx-6">
                     <label for="src" class="text-3xl  w-max mr-12">Billede:</label>
                     <input type="file" name="src" id="src" data-value="<?php echo $row['src']; ?>" class="border border-white bg-white text-gray-700" >
+                    <!-- Vi skal bruge en hidden input til at fange den "gamle" src..., se her:  https://www.w3schools.com/tags/att_input_type_hidden.asp  -->
+                    <input type="hidden" name="oldSrc" value="<?php echo $row['src']; ?>">
                 </div>
 
                 <div class="grid grid-cols-2 mb-10 mx-6">
@@ -71,14 +82,15 @@ if (isset($_GET['updateID'])) {
 if(!isset($_GET['updateID'])){
 ?>
 <div class=" text-white">
-    <table class="w-2/3 mx-auto">
+    <table class="w-2/3 mx-auto mt-12">
         <tr>
-            <th>Beskrivelse: Hvor</th>
-            <th>Beskrivelse: Hvad</th>
-            <th>Billede</th>
-            <th>Alternativ Beskrivelse</th>
-            <th>Opdater</th>
-            <th>Slet</th>
+            <th class="text-xl">Beskrivelse: Hvor</th>
+            <th class="text-xl">Beskrivelse: Hvad</th>
+            <th class="text-xl">Billede</th>
+            <th class="text-xl">Alternativ Beskrivelse</th>
+            <th class="text-xl">Opdater</th>
+            <th class="text-xl">Slet</th>
+            <th class="text-xl">Aktiv</th>
         </tr>
         <?php $allUsers = getAllFromTable("inews");
         require "./includes/_newsTable.php"

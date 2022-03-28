@@ -2,47 +2,20 @@
 
 <?php
 $title = "Infopanel";
-require "./includes/_header.php" ?>
+require "./includes/_header.php";
+require "./includes/_crud.php"; ?>
 
 
 <div class="grid grid-cols-9 ">
   <section class="col-span-3 h-screen border-r-4 border-white">
-    <div class="pt-8">
-      <h2 class="text-center text-white text-5xl">Madplan uge 5</h2>
-      <div class="w-9/12 mx-auto min-h-[500px] border-l-2 pl-10 border-white">
-        <!-- Lunchplan -->
-        <div class="mandag text-white grid grid-cols-4 mt-14 text-2xl">
-          <p class="col-span-1">Mandag:</p>
-          <p class="col-span-3">
-            Lorem ipsum dolor sit amet
-        </div>
-        <div class="mandag text-white grid grid-cols-4 pt-10 text-2xl">
-          <p class="col-span-1">Tirsdag:</p>
-          <p class="col-span-3">
-            Gule ærter med gule ærter og spæk og klister
-          </p>
-        </div>
-        <div class="mandag text-white grid grid-cols-4 pt-10 text-2xl">
-          <p class="col-span-1">Onsdag:</p>
-          <p class="col-span-3">
-            Gule ærter med gule ærter og spæk og klister
-          </p>
-        </div>
-        <div class="mandag text-white grid grid-cols-4 pt-10 text-2xl">
-          <p class="col-span-1">Torsdag:</p>
-          <p class="col-span-3">
-            Gule ærter med gule ærter og spæk og klister
-          </p>
-        </div>
-        <div class="mandag text-white grid grid-cols-4 pt-10 text-2xl">
-          <p class="col-span-1">Fredag:</p>
-          <p class="col-span-3">
-            Gule ærter med gule ærter og spæk og klister
-          </p>
-        </div>
-      </div>
+    
+      
+      <!-- Foodplan -->
+      <?php 
+      include "./includes/_foodplan.php";
+      ?>
       <!-- Daily events -->
-      <div class="w-3/5 mx-auto border-t-2 text-white mt-20">
+      <div class="w-3/5 mx-auto border-t-2 text-white mt-16">
         <h2 class="text-3xl mt-12">Dagen i dag</h2>
         <p class="text-xl mt-4 flex items-baseline">
           Peter Joppersen
@@ -50,7 +23,7 @@ require "./includes/_header.php" ?>
         </p>
         <p class="text-xl mt-4">Alle har fri kl 14.30</p>
       </div>
-    </div>
+
   </section>
   <section class="col-span-6 flex flex-col">
     <!-- Header -->
