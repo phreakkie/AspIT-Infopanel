@@ -4,8 +4,13 @@
 
 <script>
     new Glide('.glide', {
-        autoplay: 5000,
-        animationDuration: 2000,
+        autoplay: 15000,
+        animationDuration: 1500,
+        type: "carousel"
+    }).mount()
+    new Glide('.glide1', {
+        autoplay: 7000,
+        animationDuration: 1000,
         type: "carousel"
     }).mount()
 </script>

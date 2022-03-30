@@ -47,16 +47,21 @@ require "./includes/_crud.php"; ?>
     </section>
 
     <!-- News Feed -->
-    <section class=" grid grid-cols-5 ">
-      <div class="col-span-3 border-r-4 text-white">
-        <div class="mt-8">
-          <img class="mx-auto h-[200px]" src="https://unsplash.it/300/200" alt="" />
-        </div>
-        <h2 class="text-3xl mx-8 mt-8">Verdens flotteste skæg kåret</h2>
-        <p class="text-2xl mx-8 mt-8">
-          Mand fra Randers har det flotteste skæg i verden siger adskillige
-          mennesker
-        </p>
+    <section class=" grid grid-cols-5">
+      <div class="col-span-3 border-r-4 text-white bg-aspit-news">
+      <div class="mt-8">
+        <!-- <img class="mx-auto h-[150px] object-cover object-center" src="" alt="" /> -->
+        <h2 class="text-4xl mx-8 mt-12 text-center">IT-Nyheder</h2><p class="text-center">computerworld.dk</p>
+      </div>
+      <div class="glide1 h-80 flex flex-col justify-center ">
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides  py-4">
+            
+          <?php include "./includes/_rssFeed.php"; ?>
+          
+        </div>  
+      </div>
+      </div>
       </div>
       <!-- Weather section -->
       <div class="col-span-2 grid grid-cols-3 gap-1">

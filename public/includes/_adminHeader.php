@@ -64,11 +64,9 @@ if (!isset($_SESSION['username'])) {
                     <a href='createEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret event</a>
                   </li>
                   <li>
-                    <a href='updateEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater event</a>
+                    <a href='updateEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater/slet event</a>
                   </li>
-                  <li>
-                    <a href='deleteEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet event</a>
-                  </li>                  
+                                  
                 </ul>                
             </div> 
                 </li>";

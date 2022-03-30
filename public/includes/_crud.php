@@ -125,7 +125,7 @@ function getAllFromTable($table)
             $tableID = "id";
             break;
         case "events":
-            $tableID = "id";
+            $tableID = "date";
             break;
     }
     global $connection;
@@ -166,3 +166,12 @@ function delete($id, $table)
 }
 
 
+function getSingleEvent($id)
+{
+    global $connection;
+    $sql = "SELECT * FROM events WHERE id = ?";
+    $stmt =  $connection->prepare($sql);
+    $stmt->bindParam(1, $id);
+    $stmt->execute();
+    return $stmt;
+}

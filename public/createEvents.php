@@ -34,7 +34,7 @@ if(isset($_GET['created'])){
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="descr" class="text-3xl  ">Beskrivelse:</label>
-                <input required type="text" name="descr" value="" class="border text-gray-700" placeholder="Beskrivelse af event">
+                <input required type="text" name="descr" value="" class="border text-gray-700" placeholder="Maks 100 karakterer">
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="flag"  class="text-3xl w-max mr-12">Fødselsdag:</label>

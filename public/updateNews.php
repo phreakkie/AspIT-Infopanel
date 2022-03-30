@@ -47,7 +47,7 @@ if (isset($_GET['updateID'])) {
                 
                 <div class="grid grid-cols-2 mb-10 mx-6">
                     <label for="title" class="text-3xl w-max mr-12 ">Titel:</label>
-                    <input type="text" name="title" id="title" value="<?php echo $row['title']; ?>" class="border text-gray-700" placeholder="Maks 30 karaktere">
+                    <input type="text" name="title" id="title" value="<?php echo $row['title']; ?>" class="border text-gray-700" placeholder="Maks 30 karakterer">
                 </div>
                 <div class="grid grid-cols-2 mb-10 mx-6">
                     <label for="descWhere" class="text-3xl w-max mr-12">Beskrivelse af elevens praktikplads:</label>
