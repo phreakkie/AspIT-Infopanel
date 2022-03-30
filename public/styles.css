@@ -567,20 +567,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 3rem;
 }
 
-.mt-16{
-  margin-top: 4rem;
-}
-
-.mt-4{
-  margin-top: 1rem;
+.mt-2{
+  margin-top: 0.5rem;
 }
 
 .ml-8{
   margin-left: 2rem;
-}
-
-.mt-2{
-  margin-top: 0.5rem;
 }
 
 .mr-4{
@@ -591,12 +583,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 2rem;
 }
 
+.mt-16{
+  margin-top: 4rem;
+}
+
 .mb-8{
   margin-bottom: 2rem;
 }
 
 .mr-12{
   margin-right: 3rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
 }
 
 .mb-20{
@@ -635,10 +635,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100vh;
 }
 
-.h-4{
-  height: 1rem;
-}
-
 .h-\[200px\]{
   height: 200px;
 }
@@ -649,6 +645,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-20{
   height: 5rem;
+}
+
+.h-4{
+  height: 1rem;
 }
 
 .h-6{
@@ -665,6 +665,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-full{
   height: 100%;
+}
+
+.h-auto{
+  height: auto;
+}
+
+.h-5\/6{
+  height: 83.333333%;
 }
 
 .min-h-\[500px\]{
@@ -691,10 +699,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 20rem;
 }
 
-.w-3\/5{
-  width: 60%;
-}
-
 .w-2\/5{
   width: 40%;
 }
@@ -707,6 +711,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-full{
   width: 100%;
+}
+
+.w-3\/5{
+  width: 60%;
 }
 
 .w-3\/4{
@@ -723,6 +731,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-auto{
   width: auto;
+}
+
+.w-4\/5{
+  width: 80%;
+}
+
+.w-fit{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-48{
+  width: 12rem;
 }
 
 .flex-grow{
@@ -787,6 +809,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-7{
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -870,10 +896,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-right-width: 4px;
 }
 
-.border-t-2{
-  border-top-width: 2px;
-}
-
 .border-b-4{
   border-bottom-width: 4px;
 }
@@ -884,6 +906,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-r{
   border-right-width: 1px;
+}
+
+.border-t-2{
+  border-top-width: 2px;
 }
 
 .border-l-2{
@@ -947,6 +973,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red-500{
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-fill{
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.object-scale-down{
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.object-center{
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-3{

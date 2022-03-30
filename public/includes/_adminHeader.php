@@ -61,13 +61,13 @@ if (!isset($_SESSION['username'])) {
                 <div id='dropdownNavbar2' class='hidden z-10  text-base list-none bg-gray-800 rounded divide-y divide-gray-100 shadow '>
                 <ul class='' aria-labelledby='dropdownLargeButton'>
                   <li>
-                    <a href='createEvent.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret event</a>
+                    <a href='createEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opret event</a>
                   </li>
                   <li>
-                    <a href='updateEvent.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater event</a>
+                    <a href='updateEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Opdater event</a>
                   </li>
                   <li>
-                    <a href='deleteEvent.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet event</a>
+                    <a href='deleteEvents.php' class='block py-4 px-8 text-lg text-white hover:bg-gray-600 '>Slet event</a>
                   </li>                  
                 </ul>                
             </div> 

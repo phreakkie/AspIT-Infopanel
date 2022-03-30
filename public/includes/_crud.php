@@ -1,20 +1,20 @@
 <?php
 include "_connect.php";
 
-function insertinews($descWhere, $descWhat, $src, $alt, $userid)
+function insertinews($title, $descWhere, $descWhat, $src, $alt, $userid)
 {
     global $connection;
-    $sql = "INSERT INTO inews(descWhere, descWhat, src, alt, userid) VALUES(?,?,?,?,?)";
+    $sql = "INSERT INTO inews(title, descWhere, descWhat, src, alt, userid) VALUES(?,?,?,?,?,?)";
     $stmt = $connection->prepare($sql);
-    $stmt->execute([$descWhere, $descWhat, $src, $alt, $userid]);
+    $stmt->execute([$title, $descWhere, $descWhat, $src, $alt, $userid]);
 }
 
-function updateNews($descWhere, $descWhat, $src, $alt, $active, $id)
+function updateNews($title, $descWhere, $descWhat, $src, $alt, $active, $id)
 {
     global $connection;
-    $sql = "UPDATE inews SET descWhere=?, descWhat=?, src=?, alt=?, active=? WHERE id=?" ;
+    $sql = "UPDATE inews SET title=?, descWhere=?, descWhat=?, src=?, alt=?, active=? WHERE id=?" ;
     $stmt = $connection->prepare($sql);
-    $stmt->execute([$descWhere, $descWhat, $src, $alt, $active,$id]);
+    $stmt->execute([$title, $descWhere, $descWhat, $src, $alt, $active,$id]);
     
 }
 
@@ -41,6 +41,14 @@ function updateFood($week, $mon, $tue, $wed, $thu, $fri, $id)
     $sql = "UPDATE food SET week=?, mon=?, tue=?, wed=?, thu=?, fri=? WHERE id=?" ;
     $stmt = $connection->prepare($sql);
     $stmt->execute([$week, $mon, $tue, $wed, $thu, $fri, $id]);
+    
+}
+
+function setEvents($descr, $date, $flag){
+    global $connection;
+    $sql = "INSERT INTO events(descr, date, flag) VALUES(?,?,?)";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([$descr, $date, $flag]);
     
 }
 
@@ -116,6 +124,9 @@ function getAllFromTable($table)
         case "food":
             $tableID = "id";
             break;
+        case "events":
+            $tableID = "id";
+            break;
     }
     global $connection;
     $sql = "SELECT * FROM $table ORDER BY $tableID DESC" ;
@@ -138,6 +149,9 @@ function delete($id, $table)
             $tableID = "id";
             break;
         case "food":
+            $tableID = "id";
+            break;
+        case "events":
             $tableID = "id";
             break;
     }

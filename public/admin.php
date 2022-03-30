@@ -7,7 +7,7 @@ require "./includes/_adminHeader.php";
 if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 ?>
 
-    <section class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+    <section class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto w-fit ">
         <?php echo "<p class='text-white text-8xl'>Velkommen <span class='aspit-red'>" . $_SESSION['firstname'] . "</span></p>"; ?>
     </section>
 

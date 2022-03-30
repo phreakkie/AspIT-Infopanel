@@ -7,6 +7,7 @@ $stmt = getAllFromTable("food");
 while($row = $stmt->fetch()){
     $dateTime = new DateTime();
     $weekNumber = $dateTime->format("W");
+    // $weekNumber++;
     if(ltrim($weekNumber)==ltrim($row['week'])){
 
 ?>
@@ -43,6 +44,10 @@ while($row = $stmt->fetch()){
             <?php if(!empty($row['fri'])){ ?>
           <div class="col-span-4">
           <?=$row['fri']?>
+          </div>
+          <?php }elseif($weekNumber % 2 == 0 && empty($row['fri'])){?>
+            <div class="col-span-4">
+          Fri
           </div>
           <?php }?>
         </div>

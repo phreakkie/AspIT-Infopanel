@@ -6,6 +6,7 @@ $stmt = getAllFromTable("inews");
 while ($row = $stmt->fetch()) {
 ?>
     <tr class="">
+        <td class="p-3  text-center border-x-2 border-white border-y-4"><?php echo substr($row['title'], 0, 30); ?></td>
         <td class="p-3  text-center border-x-2 border-white border-y-4"><?php echo substr($row['descWhere'], 0, 30); ?></td>
         <td class="p-3  text-center border-x-2 border-white border-y-4"><?php echo substr($row['descWhat'], 0, 30); ?></td>
         <td class="p-3  text-center border-x-2 border-white border-y-4"><?php echo substr($row['src'], 0, 30); ?></td>

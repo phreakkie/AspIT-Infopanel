@@ -8,13 +8,14 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
     
     if (isset($_POST['submit'])) {
         include "./includes/_upload.php";
+        $title = $_POST['title'];
         $descWhere = $_POST['descWhere'];
         $descWhat = $_POST['descWhat'];
         $src = $file_name;
         $alt = $_POST['alt'];
         $userid = $_SESSION['userid'];
         if($uploadOk == 1 || $uploadOk == 2){
-        insertinews($descWhere, $descWhat, $src, $alt, $userid);
+        insertinews($title, $descWhere, $descWhat, $src, $alt, $userid);
         }
     }
     
@@ -22,6 +23,10 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
     <div class=" text-white">
         <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data" class="w-2/3 mx-auto my-20 flex flex-col justify-center">
             
+            <div class="grid grid-cols-2 mb-10 mx-6">
+                <label for="title" class="text-3xl ">Titel:</label>
+                <input type="text" name="title" class="text-gray-700 rounded border-black border px-2 py-2 mb-4" placeholder="Maks 30 karakterer" required></input>
+            </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="descWhere" class="text-3xl ">Beskrivelse af elevens praktikplads:</label>
                 <textarea name="descWhere" rows="5" cols="50" class="text-gray-700 rounded border-black border px-2 py-2 mb-4" placeholder="Maks 200 karakterer" required></textarea>
