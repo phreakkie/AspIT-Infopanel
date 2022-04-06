@@ -9,7 +9,7 @@
         type: "carousel"
     }).mount()
     new Glide('.glide1', {
-        autoplay: 17000,
+        autoplay: 12000,
         animationDuration: 2000,
         type: "carousel",
         // direction: "rtl",

@@ -65,11 +65,11 @@ if (isset($_POST['username'])) {
     $stmt = getUser($username);
 
     if ($row = $stmt->fetch()) {
-        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>Brugernavnet findes allerede</p>";
+        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Brugernavnet findes allerede</p>";
     } else if ($password != $passwordRepeat) {
-        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>Passwords matcher ikke</p>";
+        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Passwords matcher ikke</p>";
     } else {
-        echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>Brugeren er oprettet</p>";
+        echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Brugeren er oprettet</p>";
         createUser($username, $hash1, $firstName, $lastName, $accessLevel);
     }
 }

@@ -49,7 +49,7 @@ if (isset($_GET['updateID'])) {
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="thu" class="text-3xl  ">Torsdag:</label>
-                <input required type="text" name="thu" value="<?=$row['thu']?>" class="border border-gray-600 text-gray-700" placeholder="Madplan for Torsdag">
+                <input required type="text" name="thu" value="<?=$row['thu']?>" class="border  text-gray-700" placeholder="Madplan for Torsdag">
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="fri" class="text-3xl  ">Fredag:</label>

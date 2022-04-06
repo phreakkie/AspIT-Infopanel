@@ -14,7 +14,7 @@ while ($row = $stmt->fetch()) {
         <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><?=($row['flag']==1?'Ja':'Nej'); ?></td>
         
         <!-- Opdater knap -->
-        <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><a class=" flex justify-center text-black hover:bg-green-400 px-1 py-1 bg-green-500 rounded" href="updateEvents.php?updateID=<?= $row['id'] ?>">Opdatér</a></td>
+        <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><a class=" flex justify-center text-black hover:bg-green-400 px-1 py-1 bg-green-500 rounded shadow-md" href="updateEvents.php?updateID=<?= $row['id'] ?>">Opdatér</a></td>
         <!-- Slet knap -->
         <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><a class=" flex justify-center" href="updateEvents.php?deleteID=<?= $row['id'] ?>">
                 <span class="crosssign flex justify-center items-center w-6 h-6 bg-red-500 rounded-full">

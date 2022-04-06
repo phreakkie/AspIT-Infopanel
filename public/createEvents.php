@@ -21,7 +21,7 @@ require "./includes/_adminHeader.php";
 
 if(isset($_GET['created'])){
     if($_GET['created'] == 'success'){
-        echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>Eventet er oprettet</p>";
+        echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Eventet er oprettet</p>";
     }
 }
     ?>

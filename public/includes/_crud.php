@@ -48,7 +48,7 @@ function setEvents($descr, $date, $flag){
     global $connection;
     $sql = "INSERT INTO events(descr, date, flag) VALUES(?,?,?)";
     $stmt = $connection->prepare($sql);
-    $stmt->execute([$descr, $flag, $date]);
+    $stmt->execute([$descr, $date, $flag]);
     
 }
 function updateEvents($descr, $date, $flag, $id)
@@ -69,7 +69,7 @@ function login($username, $password)
     $stmt->execute();
 
     if (empty($row = $stmt->fetch())) {
-        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>Brugernavn eller Password er forkert</p>";
+        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Brugernavn eller Password er forkert</p>";
     } else if (password_verify($password, $row['dbPassword'])) {
         session_start();
         $_SESSION['username'] = $row['dbUsername'];
@@ -79,7 +79,7 @@ function login($username, $password)
 
         header("location: admin.php");
     } else {
-        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>Brugernavn eller Password er forkert</p>";
+        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Brugernavn eller Password er forkert</p>";
     }
 }
 
