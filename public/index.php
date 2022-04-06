@@ -7,7 +7,7 @@ require "./includes/_crud.php"; ?>
 
 
 <div class="grid grid-cols-9 ">
-  <section class="col-span-3 h-screen border-r-4 border-white">
+  <section class="col-span-3 h-screen shadow-right border-r-4 border-white">
     
       
       <!-- Foodplan -->
@@ -51,7 +51,8 @@ require "./includes/_crud.php"; ?>
       <div class="col-span-3 border-r-4 text-white bg-aspit-news">
       <div class="mt-8">
         <!-- <img class="mx-auto h-[150px] object-cover object-center" src="" alt="" /> -->
-        <h2 class="text-4xl mx-8 mt-12 text-center">IT-Nyheder</h2><p class="text-center">computerworld.dk</p>
+        <h2 class="text-4xl mx-8 mt-12 text-center">Nyheder</h2>
+        <p class="text-center">tv2nord.dk</p>
       </div>
       <div class="glide1 h-80 flex flex-col justify-center ">
       <div class="glide__track" data-glide-el="track">

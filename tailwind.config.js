@@ -4,6 +4,9 @@ module.exports = {
     extend: {
       fontFamily: {
         OpenSans: ['Open Sans']
+      },
+      boxShadow: {
+        
       }
     },
   },

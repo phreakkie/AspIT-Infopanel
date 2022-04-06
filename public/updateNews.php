@@ -43,7 +43,8 @@ if (isset($_GET['updateID'])) {
     if ($row = $stmt->fetch()) {
 ?>
         <div class=" text-white">
-            <form action="<?php htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" class="w-2/3 mx-auto my-20 flex flex-col justify-center">
+        <h2 class="text-4xl text-center mt-8">Opdater nyheder</h2>
+            <form action="<?php htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data" class="w-2/3 mx-auto mt-8 flex flex-col justify-center">
                 
                 <div class="grid grid-cols-2 mb-10 mx-6">
                     <label for="title" class="text-3xl w-max mr-12 ">Titel:</label>
@@ -76,7 +77,7 @@ if (isset($_GET['updateID'])) {
                     echo "checked";} ?>>
                 </div>
 
-                <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-green-500  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opdater</button>
+                <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-aspit-news  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opdater</button>
 
             </form>
 
@@ -87,7 +88,8 @@ if (isset($_GET['updateID'])) {
 if(!isset($_GET['updateID'])){
 ?>
 <div class=" text-white">
-    <table class="w-2/3 mx-auto mt-12">
+<h2 class="text-4xl text-center mt-8">Nyheder</h2>
+    <table class="w-2/3 mx-auto mt-8">
         <tr>
             <th class="text-xl">Titel</th>
             <th class="text-xl">Beskrivelse: Hvor</th>

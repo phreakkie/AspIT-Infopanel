@@ -12,7 +12,7 @@ while($row = $stmt->fetch()){
 
 ?>
     <h2 class="text-center text-white text-5xl mt-16 mb-20">Madplan uge <span class="aspit-red"><?=ltrim($weekNumber)?></span></h2>
-      <div class="w-3/4 mx-auto min-h-[500px] border-l-2 pl-10 border-white flex flex-col justify-between">
+      <div class="w-3/4 mx-auto min-h-[500px] border-l-2 pl-10 border-white flex flex-col justify-between ">
         <!-- Lunchplan -->
         <div class="mandag text-white grid grid-cols-6 text-3xl items-center">
           <div class="col-span-2 font-semibold italic">Mandag:</div>

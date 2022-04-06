@@ -26,7 +26,9 @@ if(isset($_GET['created'])){
 }
     ?>
     <div class=" text-white">
-        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="w-1/2 mx-auto my-28 flex flex-col justify-center">
+
+    <h2 class="text-4xl text-center mt-8">Opret events</h2>
+        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="w-1/2 mx-auto mt-8 flex flex-col justify-center">
 
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="date" class="text-3xl  ">Dato:</label>
@@ -34,7 +36,7 @@ if(isset($_GET['created'])){
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="descr" class="text-3xl  ">Beskrivelse:</label>
-                <input required type="text" name="descr" value="" class="border text-gray-700" placeholder="Maks 100 karakterer">
+                <input required type="text" maxlength="100" name="descr" value="" class="border text-gray-700" placeholder="Maks 100 karakterer">
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="flag"  class="text-3xl w-max mr-12">Fødselsdag:</label>
@@ -43,7 +45,7 @@ if(isset($_GET['created'])){
            
             
 
-            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-green-500  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opret</button>
+            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-aspit-news  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opret</button>
             
         </form>
         

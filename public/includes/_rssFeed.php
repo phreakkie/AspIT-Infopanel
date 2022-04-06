@@ -4,7 +4,8 @@ include "./includes/_connect.php";
 $invalidurl = false;
 $numOfFeeds = 5;
 // $url = "https://www.dr.dk/nyheder/service/feeds/regionale/nord";
-$url = "https://www.computerworld.dk//rss/tag/teknologi";
+$url = "https://www.tv2nord.dk/rss";
+// $url = "https://www.computerworld.dk//rss/tag/teknologi";
 if(@simplexml_load_file($url)){
     $feeds = simplexml_load_file($url);
 }else{
@@ -24,7 +25,7 @@ if(!empty($feeds)){
         $link = $item->link;
         $desc = $item->description;
         $postDate = $item->pubDate;
-        $pubDate = date("D, d M Y", strtotime($postDate));
+        $pubDate = date("d M Y", strtotime($postDate));
 
         if($i >= $numOfFeeds){
             break;

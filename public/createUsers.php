@@ -9,7 +9,8 @@ require "./includes/_crud.php";
 
 ?>
 <div class=" text-white">
-    <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="mx-auto my-20">
+<h2 class="text-4xl text-center mt-8">Opret bruger</h2>
+    <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="mx-auto mt-8">
 
 
         <div class="grid grid-cols-2 pb-5 mb-5 mx-6 border-b border-white">

@@ -12,11 +12,8 @@ if($_SESSION['accesslevel'] == 1){
 }
 ?>
 <div class=" text-white">
-    <!-- 1. Get all users -->
-    <!-- 2. Generere table row med alt data  med link til deleteUsers.php?id=$row['userid']-->
-    <!-- 3. Tjek om $_GET['id'] er isset -->
-    <!-- 4. Kør _crud function som sletter ID'et  -->
-    <table class="w-1/2 mx-auto mt-12">
+<h2 class="text-4xl text-center mt-8">Slet brugere</h2>
+    <table class="w-1/2 mx-auto mt-8">
         <tr>
             <th class="text-xl">Brugernavn</th>
             <th class="text-xl">Fornavn</th>

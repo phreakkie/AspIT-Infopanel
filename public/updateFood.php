@@ -28,7 +28,8 @@ if (isset($_GET['updateID'])) {
     if ($row = $stmt->fetch()) {
 ?>
         <div class=" text-white">
-        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="w-1/2 mx-auto my-28 flex flex-col justify-center">
+        <h2 class="text-4xl text-center mt-8">Opdater madplan</h2>
+        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="w-1/2 mx-auto mt-8 flex flex-col justify-center">
 
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="week" class="text-3xl  ">Uge nummer:</label>
@@ -48,7 +49,7 @@ if (isset($_GET['updateID'])) {
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="thu" class="text-3xl  ">Torsdag:</label>
-                <input required type="text" name="thu" value="<?=$row['thu']?>" class="border text-gray-700" placeholder="Madplan for Torsdag">
+                <input required type="text" name="thu" value="<?=$row['thu']?>" class="border border-gray-600 text-gray-700" placeholder="Madplan for Torsdag">
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="fri" class="text-3xl  ">Fredag:</label>
@@ -56,7 +57,7 @@ if (isset($_GET['updateID'])) {
             </div>
             
 
-            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-green-500  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opdater</button>
+            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-aspit-news  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opdater</button>
             
         </form>
         
@@ -67,7 +68,8 @@ if (isset($_GET['updateID'])) {
 if(!isset($_GET['updateID'])){
 ?>
 <div class=" text-white">
-    <table class="w-2/3 mx-auto mt-12">
+<h2 class="text-4xl text-center mt-8">Madplaner</h2>
+    <table class="w-2/3 mx-auto mt-8">
         <tr>
             <th class="text-xl">Uge Nr</th>
             <th class="text-xl">Mandag</th>

@@ -48,7 +48,15 @@ function setEvents($descr, $date, $flag){
     global $connection;
     $sql = "INSERT INTO events(descr, date, flag) VALUES(?,?,?)";
     $stmt = $connection->prepare($sql);
-    $stmt->execute([$descr, $date, $flag]);
+    $stmt->execute([$descr, $flag, $date]);
+    
+}
+function updateEvents($descr, $date, $flag, $id)
+{
+    global $connection;
+    $sql = "UPDATE events SET descr=?, date=?, flag=? WHERE id=?" ;
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([$descr, $date, $flag, $id]);
     
 }
 

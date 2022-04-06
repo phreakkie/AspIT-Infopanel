@@ -25,7 +25,8 @@ if(isset($_GET['created'])){
 }
     ?>
     <div class=" text-white">
-        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="w-1/2 mx-auto my-28 flex flex-col justify-center">
+    <h2 class="text-4xl text-center mt-8">Opret madplan</h2>
+        <form action="<?php htmlentities($_SERVER['PHP_SELF']) ?>" method="POST" class="w-1/2 mx-auto mt-8 flex flex-col justify-center">
 
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="week" class="text-3xl  ">Uge nummer:</label>
@@ -53,7 +54,7 @@ if(isset($_GET['created'])){
             </div>
             
 
-            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-green-500  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opret</button>
+            <button name="submit" class="py-4 mx-auto w-1/3 text-2xl bg-aspit-news  rounded  hover:ring-2 hover:ring-green-300 hover:transition-all ease-in-out duration-200">Opret</button>
             
         </form>
         

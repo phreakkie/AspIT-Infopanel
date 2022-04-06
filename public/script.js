@@ -9,6 +9,10 @@
           }, 1000)
         })();
 
+function rssDate(){
+  
+}
+
 
 fetch("https://api.openweathermap.org/data/2.5/onecall?lat=57.048&lon=9.9187&exclude=minutely,hourly,alerts&units=metric&lang=DK&appid=8037b8a4d3f213dec8c23b3195ebe5f8")
 .then(response => response.json())
