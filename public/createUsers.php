@@ -3,6 +3,7 @@ $title = "Opret bruger";
 $al = 1;
 require "./includes/_adminHeader.php";
 require "./includes/_crud.php";
+require "./includes/_indexHeader.php";
 
 
 

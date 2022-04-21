@@ -4,7 +4,6 @@ $al = 3;
 $meta ="Oprettelse af madplan";
 require "./includes/_crud.php";
 
-
 if (isset($_POST['submit'])) {
     $week = $_POST['week'];
     $mon = $_POST['mon'];
@@ -23,6 +22,7 @@ if(isset($_GET['created'])){
         echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Madplanen er oprettet</p>";
     }
 }
+require "./includes/_indexHeader.php";
     ?>
     <div class=" text-white">
     <h2 class="text-4xl text-center mt-8">Opret madplan</h2>

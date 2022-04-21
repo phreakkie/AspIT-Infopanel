@@ -3,7 +3,9 @@
 <?php
 $title = "Infopanel";
 require "./includes/_header.php";
-require "./includes/_crud.php"; ?>
+require "./includes/_crud.php"; 
+require "./includes/_indexHeader.php";
+?>
 
 
 <div class="grid grid-cols-9 ">

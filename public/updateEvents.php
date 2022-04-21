@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 }
 
 require "./includes/_adminHeader.php";
-
+require "./includes/_indexHeader.php";
 if (isset($_GET['updateID'])) {
     $id = $_GET['updateID'];
     $stmt = getSingleEvent($id);

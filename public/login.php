@@ -1,6 +1,5 @@
 <?php
 $title = "Login";
-require "./includes/_header.php";
 require "./includes/_crud.php";
 
 if (isset($_POST['submit'])) {
@@ -8,6 +7,10 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     login($username, $password);
 }
+require "./includes/_header.php";
+require "./includes/_indexHeader.php";
+
+
 ?>
 
 

@@ -65,3 +65,5 @@ function printCurrent(data){
   dailyIcon.src = iconLink
   dailyTemp.innerHTML = temp
 }
+
+

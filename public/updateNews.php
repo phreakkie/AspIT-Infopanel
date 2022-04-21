@@ -8,35 +8,35 @@ if (isset($_GET['deleteID'])) {
     header('Location: updateNews.php');
 }
 if (isset($_POST['submit'])) {      
-        $title = $_POST['title'];
-        $descWhere = $_POST['descWhere'];
-        $descWhat = $_POST['descWhat'];
-        $src = $file_name;
-        $alt = $_POST['alt'];
-        $id = $_GET['updateID'];
-        if (isset($_POST['active'])){
-            $active = 1;
-        }else if(empty($_POST['active'])){
-            $active = 0;
-        }
-            // HVIS brugeren har valgt at uploade et nyt billede, kør upload.php, sæt src og lav de gode gamle tjek...
-        if(!empty($_FILES['src']['name'])){
+    $title = $_POST['title'];
+    $descWhere = $_POST['descWhere'];
+    $descWhat = $_POST['descWhat'];
+    $src = $file_name;
+    $alt = $_POST['alt'];
+    $id = $_GET['updateID'];
+    if (isset($_POST['active'])){
+        $active = 1;
+    }else if(empty($_POST['active'])){
+        $active = 0;
+    }
+    // HVIS brugeren har valgt at uploade et nyt billede, kør upload.php, sæt src og lav de gode gamle tjek...
+    if(!empty($_FILES['src']['name'])){
         
-            include "./includes/_upload.php";
-            $src = $file_name;
-            if($uploadOk == 1 || $uploadOk == 2){
-                updateNews($descWhere, $descWhat, $src, $alt, $active, $id);
-            }
-        } else{
-           // Hvis der IKKE er valgt nyt billede - haps da det gamle billede fra det skjulte input - se linje ca 69...
-            $src = $_POST['oldSrc'];      
-            updateNews($title, $descWhere, $descWhat, $src, $alt, $active, $id);       
+        include "./includes/_upload.php";
+        $src = $file_name;
+        if($uploadOk == 1 || $uploadOk == 2){
+            updateNews($descWhere, $descWhat, $src, $alt, $active, $id);
         }
-        header("location: updateNews.php");
-
+    } else{
+        // Hvis der IKKE er valgt nyt billede - haps da det gamle billede fra det skjulte input - se linje ca 69...
+        $src = $_POST['oldSrc'];      
+        updateNews($title, $descWhere, $descWhat, $src, $alt, $active, $id);       
+    }
+    header("location: updateNews.php");
+    
 }
 require "./includes/_adminHeader.php";
-
+require "./includes/_indexHeader.php";
 if (isset($_GET['updateID'])) {
     $id = $_GET['updateID'];
     $stmt = getSingleNews($id);

@@ -1,5 +1,5 @@
 <?php
-require "./includes/_header.php";
+session_start();
 require "./includes/_loginCheck.php";
 
 if (!isset($_SESSION['username'])) {
@@ -16,9 +16,40 @@ if (!isset($_SESSION['username'])) {
     }
 }
 ?>
+<script>
+    var t;
+    window.onload = function(){
+        resetTimer();
+    }
+    // DOM Events
+    document.onmousemove = function(){
+        resetTimer();
+    }
+    
+    document.onkeypress = function(){
+        resetTimer();
+    }
+    // document.addEventListener('mousemove', resetTimer())
+    // document.addEventListener('keydown', resetTimer())
+    console.log('loaded');
+
+function logout() {
+        alert("You are now logged out.")
+        location.href = 'logout.php'
+    }
+
+    function resetTimer() {
+		
+        clearTimeout(t);
+        t = setTimeout(logout, 600000)
+        
+    }
+</script>
 <nav>
-    <ul class="flex items-center text-white">
-        <?php if ($_SESSION['accesslevel'] == 1) {
+    <?php 
+    echo "<ul class='flex items-center text-white'>";
+            
+        if ($_SESSION['accesslevel'] == 1) {
 
             // Brugere button
             echo "<li class='flex-grow'><button  id='dropdownNavbarLink' data-dropdown-toggle='dropdownNavbar' class='w-full relative bg-gray-800 hover:bg-gray-600 hover:ease-in duration-150 text-center py-4 border-r'>Brugere</button>
@@ -72,8 +103,8 @@ if (!isset($_SESSION['username'])) {
                 </li>";
         }
 
-        if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2 || $_SESSION['accesslevel'] == 3) { ?>
-            <li class='flex-grow'><button id='dropdownNavbarLink' data-dropdown-toggle='dropdownNavbar3' class='w-full relative bg-gray-800 hover:bg-gray-600 hover:ease-in duration-150 text-center py-4 border-r'>Madplan</button>
+        if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2 || $_SESSION['accesslevel'] == 3) { 
+         echo  "<li class='flex-grow'><button id='dropdownNavbarLink' data-dropdown-toggle='dropdownNavbar3' class='w-full relative bg-gray-800 hover:bg-gray-600 hover:ease-in duration-150 text-center py-4 border-r'>Madplan</button>
 
                 <div id='dropdownNavbar3' class='hidden z-10  text-base list-none bg-gray-800 rounded divide-y divide-gray-100 shadow '>
                     <ul class='' aria-labelledby='dropdownLargeButton'>
@@ -88,8 +119,8 @@ if (!isset($_SESSION['username'])) {
             </li>
             <!-- // Log ud button -->
             <li class='flex-grow'><a class='bg-gray-800 block hover:bg-gray-600 hover:ease-in 
-            duration-150 text-center py-4 ' href='logout.php'>Log ud</a></li>
-        <?php } ?>
-    </ul>
-</nav>
-<?php
+            duration-150 text-center py-4 ' href='logout.php'>Log ud</a></li> ";
+        } 
+        echo    "</ul> 
+            </nav>";
+

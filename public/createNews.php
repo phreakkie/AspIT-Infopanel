@@ -18,7 +18,7 @@ if ($_SESSION['accesslevel'] == 1 || $_SESSION['accesslevel'] == 2) {
         insertinews($title, $descWhere, $descWhat, $src, $alt, $userid);
         }
     }
-    
+    require "./includes/_indexHeader.php";
     ?>
     <div class=" text-white">
         <h2 class="text-4xl text-center mt-8">Opret nyheder</h2>
