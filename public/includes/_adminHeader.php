@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 require "./includes/_loginCheck.php";
 
 if (!isset($_SESSION['username'])) {
@@ -122,5 +124,5 @@ function logout() {
             duration-150 text-center py-4 ' href='logout.php'>Log ud</a></li> ";
         } 
         echo    "</ul> 
-            </nav>";
+                    </nav>";
 

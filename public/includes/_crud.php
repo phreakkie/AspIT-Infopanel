@@ -183,3 +183,11 @@ function getSingleEvent($id)
     $stmt->execute();
     return $stmt;
 }
+function getSingleEventByDate($date)
+{
+    global $connection;
+    $sql = "SELECT * FROM events WHERE date = ?";
+    $stmt =  $connection->prepare($sql);
+    $stmt->execute([$date]);
+    return $stmt;
+}
