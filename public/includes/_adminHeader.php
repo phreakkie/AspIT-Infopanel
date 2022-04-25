@@ -47,9 +47,9 @@ function logout() {
         
     }
 </script>
-<nav>
-    <?php 
-    echo "<ul class='flex items-center text-white'>";
+<?php 
+  echo  '<nav>';
+   echo  "<ul class='flex items-center text-white'>";
             
         if ($_SESSION['accesslevel'] == 1) {
 
