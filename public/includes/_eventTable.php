@@ -10,7 +10,7 @@ while ($row = $stmt->fetch()) {
     <tr class="">
         
         <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><?php echo substr($date, 0, 30); ?></td>
-        <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><?php echo substr($row['descr'], 0, 30); ?></td>
+        <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><?php echo substr($row['descr'], 0, 50); ?></td>
         <td class="p-3  text-center border-x-2 border-white/50 border-y-4"><?=($row['flag']==1?'Ja':'Nej'); ?></td>
         
         <!-- Opdater knap -->

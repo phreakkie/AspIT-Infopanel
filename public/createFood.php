@@ -4,6 +4,7 @@ $al = 3;
 $meta ="Oprettelse af madplan";
 require "./includes/_crud.php";
 
+
 if (isset($_POST['submit'])) {
     $week = $_POST['week'];
     $mon = $_POST['mon'];
@@ -12,16 +13,26 @@ if (isset($_POST['submit'])) {
     $thu = $_POST['thu'];
     $fri = $_POST['fri'];
     // $userid = $_SESSION['userid'];
+    $weekNumbers = getFood($week);
+    if ($row = $weekNumbers->fetch()){
+        
+        header("location: createFood.php?created=failed");
+    }else {
     setFoodplan($week, $mon, $tue, $wed, $thu, $fri);
     header("location: createFood.php?created=success");
-}
-
-if(isset($_GET['created'])){
-    if($_GET['created'] == 'success'){
-        echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Madplanen er oprettet</p>";
     }
 }
 require "./includes/_adminHeader.php";
+
+if(isset($_GET['created'])){
+    if($_GET['created'] == 'success'){
+        echo "<p class='text-green-500 mx-auto py-6 px-8 bg-green-200 border rounded-lg border-green-500 absolute top-28 left-2/3 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Madplanen er oprettet</p>";
+
+    }else if($_GET['created'] == 'failed'){
+        echo "<p class='text-red-500 mx-auto py-6 px-8 bg-red-200 border rounded-lg border-red-500 absolute top-28 left-2/3 transform -translate-x-1/2 -translate-y-1/2 shadow-md'>Der er allerede en madplan for den uge</p>";
+        
+    }
+}
 require "./includes/_indexHeader.php";
     ?>
     <div class=" text-white">
@@ -30,11 +41,11 @@ require "./includes/_indexHeader.php";
 
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="week" class="text-3xl  ">Uge nummer:</label>
-                <input required type="number" min="1" max="52" name="week" value="" class="border text-gray-700 w-24" placeholder="Uge nr">
+                <input required type="number" min="1" max="52" name="week" value='' class="border text-gray-700 w-24" placeholder="Uge nr">
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="mon" class="text-3xl  ">Mandag:</label>
-                <input required type="text" name="mon" value="" class="border text-gray-700" placeholder="Madplan for Mandag">
+                <input required type="text" name="mon" value='' class="border text-gray-700" placeholder="Madplan for Mandag">
             </div>
             <div class="grid grid-cols-2 mb-10 mx-6">
                 <label for="tue" class="text-3xl  ">Tirsdag:</label>

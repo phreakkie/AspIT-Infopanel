@@ -3,9 +3,10 @@ include "./includes/_connect.php";
 
 $invalidurl = false;
 $numOfFeeds = 5;
-// $url = "https://www.dr.dk/nyheder/service/feeds/regionale/nord";
-$url = "https://www.tv2nord.dk/rss";
+$url = "https://www.dr.dk/nyheder/service/feeds/regionale/nord";
+// $url = "https://www.tv2nord.dk/rss";
 // $url = "https://www.computerworld.dk//rss/tag/teknologi";
+// $url = "https://www.altomdata.dk/feed/";
 if(@simplexml_load_file($url)){
     $feeds = simplexml_load_file($url);
 }else{

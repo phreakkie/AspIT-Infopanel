@@ -191,3 +191,13 @@ function getSingleEventByDate($date)
     $stmt->execute([$date]);
     return $stmt;
 }
+
+function getFood($week)
+{
+    global $connection;
+    $sql = "SELECT * FROM food WHERE week = ?";
+    $stmt =  $connection->prepare($sql);
+    $stmt->bindParam(1, $week);
+    $stmt->execute();
+    return $stmt;
+}

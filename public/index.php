@@ -54,7 +54,7 @@ require "./includes/_indexHeader.php";
       <div class="mt-8">
         <!-- <img class="mx-auto h-[150px] object-cover object-center" src="" alt="" /> -->
         <h2 class="text-4xl mx-8 mt-12 text-center">Nyheder</h2>
-        <p class="text-center">tv2nord.dk</p>
+        <p class="text-center">DR.dk Nordjylland</p>
       </div>
       <div class="glide1 h-80 flex flex-col justify-center ">
       <div class="glide__track" data-glide-el="track">
